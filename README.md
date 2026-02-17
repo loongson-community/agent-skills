@@ -55,14 +55,14 @@ Something else. You can use either English or Chinese.
 为提高可追溯性，要求所有 AI 智能体在 AIGC 提交中记录自身的模型信息等。推荐的做法是在提交说明的 trailer 部分添加如下标签：
 
 ```plain
-Co-authored-by: <模型名称/版本> (<工具名称>)
+AI-assisted-by: <模型名称/版本> (<工具名称>)
 ```
 
 例如以下这些写法：
 
 ```plain
-Co-authored-by: Claude Opus 4.6 (GitHub Copilot)
-Co-authored-by: GPT-4o (Cursor)
+AI-assisted-by: Claude Opus 4.6 (GitHub Copilot)
+AI-assisted-by: GPT-4o (Cursor)
 ```
 
 ### 人类复核的最低要求
