@@ -11,18 +11,25 @@ description: LoongArch architecture development and porting guidance. Use when w
 
 LoongArch is a RISC ISA from Loongson. Key characteristics:
 - **64-bit little-endian** architecture
-- **Two incompatible ABIs**: Old world (ABI 1.0) vs New world (ABI 2.0)
+- **New world (ABI 2.0)** is the current standard ABI — assume it by default
 - **SIMD**: LSX (128-bit) and LASX (256-bit) vector extensions
 - **Binary Translation**: LBT for x86/ARM emulation acceleration
+
+> **Default ABI assumption**: Unless the user explicitly mentions "old world",
+> "ABI 1.0", legacy Loongson distributions, or the conversation suggests ABI
+> confusion, always target the **new world (ABI 2.0)**. Do not proactively
+> load old-world reference material.
 
 ## When to Load References
 
 ### [abi-worlds.en.md](references/abi-worlds.en.md)
-Load when dealing with:
-- Binary compatibility issues
-- "Old world" vs "new world" confusion
-- liblol compatibility layer questions
-- Distribution differences
+Load **only** when:
+- The user explicitly asks about old world / ABI 1.0
+- There are signs of ABI confusion (e.g. mysterious runtime failures mixing old-world and new-world binaries)
+- liblol compatibility layer questions arise
+- Comparing legacy vs modern distribution differences
+
+Do **not** load this for normal new-world porting work.
 
 ### [simd-lsx-lasx.en.md](references/simd-lsx-lasx.en.md)
 Load when:
@@ -55,7 +62,7 @@ Load for:
 
 ### Port a codebase to LoongArch
 1. Read [porting-guide.en.md](references/porting-guide.en.md) for checklist
-2. Read [abi-worlds.en.md](references/abi-worlds.en.md) to identify target ABI
+2. Target **new world (ABI 2.0)** unless the user explicitly requests old world
 3. Check [resources.en.md](references/resources.en.md) for porting status of dependencies
 
 ### Fix SIMD-related build failures

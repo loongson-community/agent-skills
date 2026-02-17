@@ -11,18 +11,24 @@ description: LoongArch 架构开发与移植指南。在处理 LoongArch（龙�
 
 LoongArch 是龙芯开发的 RISC 指令集架构。主要特点：
 - **64 位小端**架构
-- **两种不兼容的 ABI**：旧世界（ABI 1.0）与新世界（ABI 2.0）
+- **新世界（ABI 2.0）**为当前标准 ABI——默认以此为目标
 - **SIMD**：LSX（128 位）和 LASX（256 位）向量扩展
 - **二进制翻译**：LBT，用于 x86/ARM 模拟加速
+
+> **默认 ABI 假设**：除非用户明确提及"旧世界"、"ABI 1.0"、旧版龙芯发行版，
+> 或对话中出现 ABI 混淆的迹象，否则始终以**新世界（ABI 2.0）**为目标。
+> 不要主动加载旧世界参考资料。
 
 ## 何时加载参考资料
 
 ### [abi-worlds.zh.md](references/abi-worlds.zh.md)
-处理以下问题时加载：
-- 二进制兼容性问题
-- "旧世界"与"新世界"的困惑
-- liblol 兼容层相关问题
-- 发行版差异
+**仅**在以下情况加载：
+- 用户明确询问旧世界 / ABI 1.0 相关内容
+- 出现 ABI 混淆的迹象（如混用旧世界和新世界二进制文件导致的异常运行时错误）
+- 涉及 liblol 兼容层问题
+- 比较旧版与现代发行版的差异
+
+普通的新世界移植工作**不要**加载此文档。
 
 ### [simd-lsx-lasx.zh.md](references/simd-lsx-lasx.zh.md)
 在以下情况加载：
@@ -55,7 +61,7 @@ LoongArch 是龙芯开发的 RISC 指令集架构。主要特点：
 
 ### 将代码库移植到 LoongArch
 1. 阅读 [porting-guide.zh.md](references/porting-guide.zh.md) 了解清单
-2. 阅读 [abi-worlds.zh.md](references/abi-worlds.zh.md) 确定目标 ABI
+2. 默认以**新世界（ABI 2.0）**为目标，除非用户明确要求旧世界
 3. 查看 [resources.zh.md](references/resources.zh.md) 了解依赖项的移植状态
 
 ### 修复 SIMD 相关的构建失败
