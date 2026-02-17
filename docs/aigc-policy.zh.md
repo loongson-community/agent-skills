@@ -14,7 +14,7 @@ AIGC 知识产权的讨论方兴未艾，我们认为有必要对 AIGC 做一定
 - 翻译
 - 提交说明（commit message）
 
-纯粹由人类编写、仅经 AI 辅助进行拼写检查或格式化的内容，不视为 AIGC。
+纯粹由人类编写、仅经 AI 辅助进行拼写检查或格式化的内容，不被视为 AIGC。
 
 ## 提交拆分与标记
 
@@ -89,7 +89,7 @@ Original prompt:
 > 请折行书写。
 ```
 
-该段落与 trailer 之间须有一个空行。示例：
+在该段落与 trailer 之间须留一个空行。示例：
 
 ```plain
 feat(docs): add AIGC policy FAQ section

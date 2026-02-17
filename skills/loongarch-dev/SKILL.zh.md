@@ -28,7 +28,7 @@ LoongArch 是龙芯开发的 RISC 指令集架构。主要特点：
 - 涉及 liblol 兼容层问题
 - 比较旧版与现代发行版的差异
 
-普通的新世界移植工作**不要**加载此文档。
+对于普通的新世界移植工作，**不要**加载此文档。
 
 ### [simd-lsx-lasx.zh.md](references/simd-lsx-lasx.zh.md)
 在以下情况加载：
@@ -76,7 +76,7 @@ LoongArch 是龙芯开发的 RISC 指令集架构。主要特点：
 ### 编写内联汇编
 1. 阅读 [porting-guide.zh.md](references/porting-guide.zh.md) 的内联汇编章节
 2. 参考 LoongArch 指令集手册
-3. 有内建函数时优先使用内建函数而非内联汇编
+3. 在有内建函数可用时，应优先使用内建函数而非内联汇编
 
 ## 架构检测
 
@@ -97,7 +97,7 @@ LoongArch 是龙芯开发的 RISC 指令集架构。主要特点：
 #ifdef __loongarch_bt   // LBT 二进制翻译
 ```
 
-**注意**：LoongArch 区分 **ABI 数据模型**（`__loongarch_lp64`）和 **ISA 能力**（`__loongarch_grlen`）。对于大多数软件，应检查 ABI（`lp64`）而非硬件。详见 [porting-guide.zh.md](references/porting-guide.zh.md)。
+**注意**：在 LoongArch 中，**ABI 数据模型**（`__loongarch_lp64`）和 **ISA 能力**（`__loongarch_grlen`）是分开的。对于大多数软件，应检查 ABI（`lp64`）而非硬件。详见 [porting-guide.zh.md](references/porting-guide.zh.md)。
 
 ## 社区
 

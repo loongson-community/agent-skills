@@ -25,7 +25,7 @@
 - **areweloongyet.com**：https://areweloongyet.com/ — 软件移植状态追踪器
 - **GitHub 组织**：https://github.com/loongson-community
 
-这些站点追踪：
+在这些站点上可以追踪：
 - 软件移植状态
 - 已知问题和解决方法
 - 社区文档
