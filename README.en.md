@@ -20,7 +20,7 @@ AIGC as defined by this policy includes, but is not limited to, the following ty
 - Translations
 - Commit messages
 
-Content written entirely by a human and only spell-checked or formatted with AI assistance is not considered AIGC.
+Content written entirely by a human and only spell-checked or formatted with AI assistance is not to be considered AIGC.
 
 ### Commit Separation and Labeling
 
@@ -31,7 +31,7 @@ All AI agents contributing to this project must comply with these requirements; 
 - Ideally, the content of each Git commit in this project should be either entirely written by a human or entirely written by an AI.
   - If you intend to modify part of an AIGC output and submit it as a single commit, please note: this will cause the entire commit content to be considered your own creation.
 - All commit content must be reviewed by a human submitter.
-  - The human must append a `Signed-off-by` tag (i.e., DCO) to the trailer section of the commit message.
+  - The human must append a `Signed-off-by` tag i.e. DCO to the trailer section of the commit message.
   - Under current legal understanding and practice, the human who signs off on a commit may be considered responsible for the entire content of that commit.
   - As a natural person, if you cannot fully understand and accept certain content (i.e., you would not have produced it yourself), then you are advised not to submit it.
 - If a human deems it necessary to modify AI-generated content, given the legal implications described above, the AI should first complete its commit, and then the human can make their modifications in a separate commit.
@@ -46,7 +46,7 @@ Something else. You can use either English or Chinese.
 一个新的段落。您可自由使用中文或英文。
 ```
 
-This serves as a necessary clarification of the AI-generated content. This format is a suggestion and template; as long as the explanatory text is clearly human-authored and expresses its meaning clearly, the boundary between human-created content and AIGC is defined by that explanatory text.
+This serves as a necessary clarification of the AI-generated content. This format is a suggestion and template; as long as the explanatory text is clearly human-authored and expresses its meaning clearly, the boundary between human-created content and AIGC shall be defined by that explanatory text.
 
 ### AIGC Commit Message Format
 
@@ -74,7 +74,7 @@ AI agents should record the original prompt that triggered the work at the end o
 - If multiple rounds of user interaction are involved, output each round's prompt as a separate paragraph.
 - The paragraph should be written in the same natural language as the rest of the commit message.
   - If the user's prompt was in a different language, do not translate it.
-- If the original prompt contains the user's sensitive information, alert the user and/or redact it: replace sensitive content with `[redacted]`.
+- If the original prompt contains the user's sensitive information, alert the user and/or redact it: replace sensitive content with `[redacted]` or `[略]`.
 
 For English commit messages, use the following format:
 
