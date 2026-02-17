@@ -73,6 +73,31 @@ High-level layout:
 - Keep lines at a reasonable length (wrap around 80–100 characters where practical).
 - SPDX license headers (`<!-- SPDX-License-Identifier: ... -->`) should appear at the top of documentation files.
 
+### Chinese writing style
+
+When writing Chinese content, avoid **topic-comment sentence structures**.
+Use **subject-predicate constructions** with appropriate prepositions or
+particles instead, so that readers of all backgrounds — especially those
+unfamiliar with LoongArch jargon — can understand the text more easily.
+
+Specific rules:
+
+- **Do not let a bare topic serve as the grammatical subject while
+  omitting the preposition.** Use prepositions such as "对于", "为",
+  or "在" to make the semantic relationship explicit.
+- **Do not omit the passive-voice marker for inanimate subjects**
+  ("被", "由", etc.), or rewrite as an explicit active-voice sentence
+  with the otherwise implied object spelled out.
+
+Examples:
+
+| ❌ Topic-comment (avoid) | ✅ Subject-predicate (preferred) |
+|---|---|
+| 新世界移植工作不要加载此文档 | 对于新世界移植工作，不要加载此文档 |
+| Markdown 文件使用 ATX 风格标题 | 为 Markdown 文件使用 ATX 风格标题 |
+| 所有文件均须提供双语言版本 | 必须为所有文件提供双语言版本 |
+| 新世界工具链通常能正确自动检测 | 新世界工具链通常能被自动检测; or: 新世界工具链通常能自动检测目标元组 |
+
 ## Commit message style
 
 Follow Conventional Commits:
