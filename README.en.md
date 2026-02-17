@@ -2,6 +2,13 @@
 
 # Agent Skills Collection Maintained by the Loongson Community (Unofficial)
 
+> [!NOTE]
+>
+> Please **DO NOT USE THIS PROJECT YET**: Most content has not been reviewed
+> yet by fellow LoongArch developers. Many instances of AI slop have been
+> identified already. You can follow this project and help reviewing and fixing
+> the content, but _please do not install skills here to your agents_.
+
 ## License
 
 To encourage knowledge sharing, the contents of this project are publicly released under the following open-source licenses:
