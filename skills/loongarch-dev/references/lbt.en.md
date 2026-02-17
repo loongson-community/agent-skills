@@ -143,5 +143,5 @@ void emulate_x86_add() {
 
 ## See Also
 
-- [abi-worlds.md](abi-worlds.md) — ABI compatibility considerations for translated binaries
-- [simd-lsx-lasx.md](simd-lsx-lasx.md) — SIMD operations often used alongside translation
+- [abi-worlds.en.md](abi-worlds.en.md) — ABI compatibility considerations for translated binaries
+- [simd-lsx-lasx.en.md](simd-lsx-lasx.en.md) — SIMD operations often used alongside translation

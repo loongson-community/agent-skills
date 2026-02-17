@@ -17,34 +17,34 @@ LoongArch 是龙芯开发的 RISC 指令集架构。主要特点：
 
 ## 何时加载参考资料
 
-### [abi-worlds.md](references/abi-worlds.md)
+### [abi-worlds.zh.md](references/abi-worlds.zh.md)
 处理以下问题时加载：
 - 二进制兼容性问题
 - "旧世界"与"新世界"的困惑
 - liblol 兼容层相关问题
 - 发行版差异
 
-### [simd-lsx-lasx.md](references/simd-lsx-lasx.md)
+### [simd-lsx-lasx.zh.md](references/simd-lsx-lasx.zh.md)
 在以下情况加载：
 - 从 x86（SSE/AVX）或 ARM（NEON）移植 SIMD 代码
 - 编写 LSX/LASX 指令
 - 运行时检测 SIMD 能力
 - 优化向量化代码
 
-### [lbt.md](references/lbt.md)
+### [lbt.zh.md](references/lbt.zh.md)
 在以下情况加载：
 - 处理二进制翻译（QEMU、Box64 等）
 - 需要 x86 风格的 EFLAGS 模拟
 - 构建模拟层
 
-### [porting-guide.md](references/porting-guide.md)
+### [porting-guide.zh.md](references/porting-guide.zh.md)
 用于：
 - 通用移植清单和最佳实践
 - 编译器特性检测（`__loongarch__` 宏）
 - 内联汇编语法
 - 常见移植问题和解决方案
 
-### [resources.md](references/resources.md)
+### [resources.zh.md](references/resources.zh.md)
 用于：
 - 官方文档链接
 - 社区资源（loongfans.cn、areweloongyet.com）
@@ -54,21 +54,21 @@ LoongArch 是龙芯开发的 RISC 指令集架构。主要特点：
 ## 常见任务
 
 ### 将代码库移植到 LoongArch
-1. 阅读 [porting-guide.md](references/porting-guide.md) 了解清单
-2. 阅读 [abi-worlds.md](references/abi-worlds.md) 确定目标 ABI
-3. 查看 [resources.md](references/resources.md) 了解依赖项的移植状态
+1. 阅读 [porting-guide.zh.md](references/porting-guide.zh.md) 了解清单
+2. 阅读 [abi-worlds.zh.md](references/abi-worlds.zh.md) 确定目标 ABI
+3. 查看 [resources.zh.md](references/resources.zh.md) 了解依赖项的移植状态
 
 ### 修复 SIMD 相关的构建失败
-1. 阅读 [simd-lsx-lasx.md](references/simd-lsx-lasx.md)
+1. 阅读 [simd-lsx-lasx.zh.md](references/simd-lsx-lasx.zh.md)
 2. 将现有指令映射到 LSX/LASX 等效指令
 3. 如需要，添加运行时 CPU 检测
 
 ### 在新世界系统上运行旧世界二进制文件
-1. 阅读 [abi-worlds.md](references/abi-worlds.md) 的 liblol 章节
+1. 阅读 [abi-worlds.zh.md](references/abi-worlds.zh.md) 的 liblol 章节
 2. 从 https://liblol.aosc.io/ 安装 liblol
 
 ### 编写内联汇编
-1. 阅读 [porting-guide.md](references/porting-guide.md) 的内联汇编章节
+1. 阅读 [porting-guide.zh.md](references/porting-guide.zh.md) 的内联汇编章节
 2. 参考 LoongArch 指令集手册
 3. 有内建函数时优先使用内建函数而非内联汇编
 
@@ -91,7 +91,7 @@ LoongArch 是龙芯开发的 RISC 指令集架构。主要特点：
 #ifdef __loongarch_bt   // LBT 二进制翻译
 ```
 
-**注意**：LoongArch 区分 **ABI 数据模型**（`__loongarch_lp64`）和 **ISA 能力**（`__loongarch_grlen`）。对于大多数软件，应检查 ABI（`lp64`）而非硬件。详见 [porting-guide.md](references/porting-guide.md)。
+**注意**：LoongArch 区分 **ABI 数据模型**（`__loongarch_lp64`）和 **ISA 能力**（`__loongarch_grlen`）。对于大多数软件，应检查 ABI（`lp64`）而非硬件。详见 [porting-guide.zh.md](references/porting-guide.zh.md)。
 
 ## 社区
 
