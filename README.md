@@ -52,7 +52,7 @@ Something else. You can use either English or Chinese.
 
 ### AIGC 提交说明格式
 
-为提高可追溯性，要求所有 AI 智能体在 AIGC 提交中遵守以下提交说明格式。该格式参考了[龙迷社区](https://loongfans.cn)门户项目的约定。
+为提高可追溯性，要求所有 AI 智能体在 AIGC 提交中遵守以下提交说明格式。
 
 #### 身份披露
 
@@ -71,13 +71,24 @@ AI-assisted-by: GPT-4o (Cursor)
 
 #### 原始提示词记录
 
-AI 智能体应当在提交说明正文的末尾（trailer 之前）记录触发本次工作的原始提示词（prompt），格式如下：
+AI 智能体应当在提交说明正文的末尾（trailer 之前）记录触发本次工作的原始提示词（original prompt）。该段落应按照提交说明的其余部分的自然语言书写，不一定永远等于用户提示词所用的语言。
+
+英语提交说明的格式如下：
 
 ```plain
 Original prompt:
 
-> 用户的提示词内容，以 Markdown 引用块形式呈现。
-> 可以跨越多行。
+> User's original prompt in Markdown blockquote.
+> Wrap long lines.
+```
+
+汉语提交说明的格式如下：
+
+```plain
+原始提示词：
+
+> Markdown 块引用形式的用户的提示词内容。
+> 请折行书写。
 ```
 
 该段落与 trailer 之间须有一个空行。示例：
@@ -92,9 +103,12 @@ Original prompt:
 
 > 请为 AIGC 政策添加一个常见问题部分，涵盖最常见的贡献者疑问。
 
-Signed-off-by: Contributor Name <contributor@example.com>
 AI-assisted-by: Claude Opus 4.6 (GitHub Copilot)
+Signed-off-by: Contributor Name <contributor@example.com>
 ```
+
+此处包含了 `Signed-off-by` 一行，仅为示范排列顺序作用：一般 `Signed-off-by`
+应置于 trailer 区域最后。因为 DCO 必须由适格的主体添加，所以禁止 AI 智能体帮助用户添加此标记。
 
 如因工具限制无法获取或再现原始提示词，可省略此部分，但提交者应在人类复核时确认提交意图是明确的。
 
