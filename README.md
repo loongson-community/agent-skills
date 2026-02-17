@@ -50,20 +50,53 @@ Something else. You can use either English or Chinese.
 
 以对 AI 生成的内容作必要解释。该格式是一个建议和模板；只要解释文字是明确由人类创作的且表意清晰，人类创作内容与 AIGC 的边界就以该解释文字为准。
 
-### AI 工具与模型信息记录
+### AIGC 提交说明格式
 
-为提高可追溯性，要求所有 AI 智能体在 AIGC 提交中记录自身的模型信息等。推荐的做法是在提交说明的 trailer 部分添加如下标签：
+为提高可追溯性，要求所有 AI 智能体在 AIGC 提交中遵守以下提交说明格式。该格式参考了[龙迷社区](https://loongfans.cn)门户项目的约定。
+
+#### 身份披露
+
+AI 智能体必须在提交说明的 trailer 部分用 `AI-assisted-by` 标签披露自身身份：
 
 ```plain
 AI-assisted-by: <模型名称/版本> (<工具名称>)
 ```
 
-例如以下这些写法：
+例如：
 
 ```plain
 AI-assisted-by: Claude Opus 4.6 (GitHub Copilot)
 AI-assisted-by: GPT-4o (Cursor)
 ```
+
+#### 原始提示词记录
+
+AI 智能体应当在提交说明正文的末尾（trailer 之前）记录触发本次工作的原始提示词（prompt），格式如下：
+
+```plain
+Original prompt:
+
+> 用户的提示词内容，以 Markdown 引用块形式呈现。
+> 可以跨越多行。
+```
+
+该段落与 trailer 之间须有一个空行。示例：
+
+```plain
+feat(docs): add AIGC policy FAQ section
+
+Add a frequently asked questions section to help contributors
+understand the AIGC policy requirements.
+
+Original prompt:
+
+> 请为 AIGC 政策添加一个常见问题部分，涵盖最常见的贡献者疑问。
+
+Signed-off-by: Contributor Name <contributor@example.com>
+AI-assisted-by: Claude Opus 4.6 (GitHub Copilot)
+```
+
+如因工具限制无法获取或再现原始提示词，可省略此部分，但提交者应在人类复核时确认提交意图是明确的。
 
 ### 人类复核的最低要求
 
